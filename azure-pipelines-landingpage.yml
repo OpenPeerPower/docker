@@ -1,0 +1,34 @@
+# https://dev.azure.com/open-peer-power
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - landingpage/*
+pr: none
+
+variables:
+  - name: versionBuilder
+    value: '6.9'
+  - group: docker
+
+jobs:
+- job: 'Landingpage'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: sudo docker login -u $(dockerUser) -p $(dockerPassword)
+    displayName: 'Docker hub login'
+  - script: sudo docker pull openpeerpower/amd64-builder:$(versionBuilder)
+    displayName: 'Install Builder'
+  - script: |
+      sudo docker run --rm --privileged \
+        -v ~/.docker:/root/.docker \
+        -v /run/docker.sock:/run/docker.sock:rw -v $(pwd):/data:ro \
+        openpeerpower/amd64-builder:$(versionBuilder) --openpeerpower-landingpage ALL \
+        -t /data/landingpage --docker-hub openpeerpower
+    displayName: 'Build Landingpage'
+
