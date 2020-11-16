@@ -16,8 +16,8 @@ resources:
   repositories:
     - repository: azure
       type: github
-      name: 'open-peer-power/ci-azure'
-      endpoint: 'open-peer-power'
+      name: 'openpeerpower/ci-azure'
+      endpoint: 'openpeerpower'
 
 jobs:
 - template: templates/azp-job-wheels.yaml@azure
