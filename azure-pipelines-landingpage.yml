@@ -12,7 +12,7 @@ pr: none
 
 variables:
   - name: versionBuilder
-    value: '3.1'
+    value: 'v3.1'
   - group: docker
 
 jobs:
