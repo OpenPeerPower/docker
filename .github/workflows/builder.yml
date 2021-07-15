@@ -2,7 +2,7 @@ name: Build base images
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
   release:
     types: ["published"]
 
@@ -25,11 +25,11 @@ jobs:
 
     - name: Get information
       id: info
-      uses: openpeerpower/actions/helpers/info@master
+      uses: openpeerpower/actions/helpers/info@main
 
     - name: Get version
       id: version
-      uses: openpeerpower/actions/helpers/version@master
+      uses: openpeerpower/actions/helpers/version@main
       with:
         type: ${{ env.BUILD_TYPE }}
 
