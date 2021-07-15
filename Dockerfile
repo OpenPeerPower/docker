@@ -9,8 +9,8 @@ ARG \
     PICOTTS_HASH \
     TELLDUS_COMMIT
 
-# Add Home Assistant wheels repository
-ENV WHEELS_LINKS=https://wheels.home-assistant.io/alpine-3.13/${BUILD_ARCH}/
+# Add Open Peer Power wheels repository
+ENV WHEELS_LINKS=https://wheels.openpeerpower.io/alpine-3.13/${BUILD_ARCH}/
 
 ####
 # Install core
@@ -70,7 +70,7 @@ RUN \
         zlib
 
 ####
-## Install pip module for component/homeassistant
+## Install pip module for component/openpeerpower
 COPY requirements.txt /usr/src/
 RUN \
     pip3 install --no-cache-dir --no-index --only-binary=:all: --find-links ${WHEELS_LINKS} \
