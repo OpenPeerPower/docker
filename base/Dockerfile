@@ -3,7 +3,7 @@ FROM ${BUILD_FROM}
 
 # Add Opp.io wheels repository
 ARG BUILD_ARCH
-ENV WHEELS_LINKS=https://wheels.open-peer-power.io/alpine-3.12/${BUILD_ARCH}/
+ENV WHEELS_LINKS=https://wheels.openpeerpower.io/alpine-3.12/${BUILD_ARCH}/
 
 ####
 # Install core
