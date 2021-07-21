@@ -10,7 +10,7 @@ ARG \
     TELLDUS_COMMIT
 
 # Add Open Peer Power wheels repository
-ENV WHEELS_LINKS=https://openpeerpower.io/whl-ix/alpine-3.13/${BUILD_ARCH}/
+ENV WHEELS_LINKS=https://wheels.home-assistant.io/alpine-3.13/${BUILD_ARCH}/
 #
 
 ####

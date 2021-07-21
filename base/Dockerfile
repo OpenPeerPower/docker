@@ -3,7 +3,7 @@ FROM ${BUILD_FROM}
 
 # Add Opp.io wheels repository
 ARG BUILD_ARCH
-ENV WHEELS_LINKS=https://openpeerpower.io/whl-ix/alpine-3.12/${BUILD_ARCH}/
+ENV WHEELS_LINKS=https://wheels.home-assistant.io/alpine-3.12/${BUILD_ARCH}/
 
 ####
 # Install core
